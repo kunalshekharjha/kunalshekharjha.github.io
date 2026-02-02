@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal Shekhar | Cyber-Industrial CV</title>
+    <title>Kunal Shekhar</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -142,12 +142,15 @@
             <div class="md:col-span-8 space-y-6">
                 
                 <!-- Tab Navigation -->
-                <div class="flex border-b border-zinc-700">
-                    <button onclick="switchTab('experience')" id="tab-experience" class="px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer">
+                <div class="flex border-b border-zinc-700 overflow-x-auto">
+                    <button onclick="switchTab('experience')" id="tab-experience" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer whitespace-nowrap">
                         Experience_Log
                     </button>
-                    <button onclick="switchTab('education')" id="tab-education" class="px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer">
+                    <button onclick="switchTab('education')" id="tab-education" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap">
                         Education_Data
+                    </button>
+                    <button onclick="switchTab('publications')" id="tab-publications" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap">
+                        Publications_File
                     </button>
                 </div>
 
@@ -167,7 +170,7 @@
                                 <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Feb 2026 - Present</span>
                             </div>
                             <p class="text-base font-medium mb-2 text-lime-400">Internship</p>
-                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Specializing in Technology Law. Handling data protection and AI governance matters. Merging technical understanding with legal frameworks.</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Working with the Tech Law Team. Assisting in data protection and AI governance matters. Merging technical understanding with legal frameworks.</p>
                         </div>
 
                         <!-- Job 2 -->
@@ -206,7 +209,7 @@
                                 <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Feb 2025</span>
                             </div>
                             <p class="text-base font-medium mb-2 text-zinc-400">Internship</p>
-                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Hands-on experience in ADR and family/criminal court proceedings.</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Gained hands-on experience in ADR and family/criminal court proceedings.</p>
                         </div>
 
                         <!-- Job 5 -->
@@ -242,50 +245,69 @@
                                 </div>
                             </div>
                             
-                            <!-- Split Grid: Certifications & Awards -->
-                            <div class="grid md:grid-cols-2 gap-8">
-                                <!-- Certifications -->
-                                <div class="pl-6 border-l border-zinc-700">
-                                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                        <i data-lucide="award" class="w-4 h-4 text-lime-400"></i> Certifications
-                                    </h3>
-                                    <ul class="space-y-4 text-sm text-zinc-400">
-                                        <li class="flex items-start gap-3">
-                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
-                                            <span>Digital Productivity - United Nations</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
-                                            <span>Web Development - Eduonix</span>
-                                        </li>
-                                        <li class="flex items-start gap-3">
-                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
-                                            <span>Data Science & ML - YBI</span>
-                                        </li>
-                                    </ul>
-                                </div>
+                                                        <!-- Certifications (Expanded to full width) -->
+                            <div class="bg-zinc-950/30 p-6 border-l-2 border-zinc-700">
+                                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                    <i data-lucide="award" class="w-4 h-4 text-lime-400"></i> Certifications
+                                </h3>
+                                <ul class="space-y-4 text-sm text-zinc-400">
+                                    <li class="flex items-start gap-3 group">
+                                        <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0 group-hover:scale-150 transition-transform"></span>
+                                        <span>Digital Productivity - United Nations</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 group">
+                                        <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0 group-hover:scale-150 transition-transform"></span>
+                                        <span>Web Development - Eduonix</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 group">
+                                        <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0 group-hover:scale-150 transition-transform"></span>
+                                        <span>Data Science & ML - YBI</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
 
-                                <!-- Trophy Cabinet (Moved Here) -->
-                                <div class="bg-zinc-800/30 p-4 border border-zinc-700">
-                                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
-                                        <i data-lucide="trophy" class="w-4 h-4 text-yellow-400"></i> Trophy Cabinet
-                                    </h3>
-                                    <div class="space-y-3">
-                                        <div class="border-l-2 border-yellow-400 pl-3">
-                                            <p class="font-bold text-sm text-zinc-200">Ideate for India: Nationals</p>
-                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">Issued by MeitY & Intel</p>
-                                        </div>
-                                        <div class="border-l-2 border-zinc-600 pl-3">
-                                            <p class="font-bold text-sm text-zinc-200">Best Memorial Award</p>
-                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">NLU Meg Intra Moot '24</p>
-                                        </div>
-                                        <div class="border-l-2 border-zinc-600 pl-3">
-                                            <p class="font-bold text-sm text-zinc-200">Quarter Finalist</p>
-                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">CCI-MNLUCS Antitrust Moot</p>
+                    <!-- Publications Tab (New) -->
+                    <div id="content-publications" class="tab-content fade-in">
+                        <div class="space-y-8">
+                            <!-- Pub 1 -->
+                            <a href="https://www.livelaw.in/articles/empowering-consumer-dispute-resolution-e-commerce-via-digital-forensics-273718" target="_blank" class="block border-l-4 border-fuchsia-500 bg-zinc-950/50 p-6 group hover:bg-zinc-800 transition-all cursor-pointer no-underline">
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 text-fuchsia-400">
+                                        <i data-lucide="book-open" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white group-hover:text-fuchsia-400 transition-colors leading-tight">
+                                            'Empowering Consumer Dispute Resolution in E-Commerce Via Digital Forensics'
+                                        </h3>
+                                        <div class="flex items-center gap-3 mt-2">
+                                            <span class="px-2 py-1 bg-fuchsia-900/30 text-fuchsia-300 text-xs font-bold uppercase tracking-wider border border-fuchsia-900/50">LiveLaw</span>
+                                            <span class="text-zinc-600 text-xs">///</span>
+                                            <span class="text-zinc-400 text-xs uppercase tracking-widest">Published</span>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
+
+                            <!-- Pub 2 -->
+                            <a href="https://drive.google.com/file/d/1el81uzrCQFoepmD4Edv6mGjo7ulYfm2p/view" target="_blank" class="block border-l-4 border-zinc-700 bg-zinc-950/50 p-6 group hover:border-fuchsia-500 hover:bg-zinc-800 transition-all cursor-pointer no-underline">
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 text-zinc-500 group-hover:text-fuchsia-400 transition-colors">
+                                        <i data-lucide="file-text" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-zinc-300 group-hover:text-white transition-colors leading-tight">
+                                            'Faith Abandoned, Rights Denied: The Legal Struggles of Apostates Under Islamic Inheritance Law in India'
+                                        </h3>
+                                        <div class="flex items-center gap-3 mt-2">
+                                            <span class="px-2 py-1 bg-zinc-800 text-zinc-400 text-xs font-bold uppercase tracking-wider border border-zinc-700 group-hover:bg-fuchsia-900/30 group-hover:text-fuchsia-300 group-hover:border-fuchsia-900/50 transition-all">Central University of Kashmir Law Review</span>
+                                            <span class="text-zinc-600 text-xs">///</span>
+                                            <span class="text-zinc-400 text-xs uppercase tracking-widest">Published</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         </div>
                     </div>
 
@@ -332,7 +354,7 @@
                         <div>
                             <div class="flex justify-between items-start mb-1">
                                 <h4 class="font-bold text-sm text-white">Google Student Ambassador</h4>
-                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                                <span class="text-[10px] text-zinc-500 font-mono">2025</span>
                             </div>
                             <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-fuchsia-500 pl-2">
                                 Organized AI workshops & led Gemini demos. Liaison between campus & Google.
@@ -343,7 +365,7 @@
                         <div>
                             <div class="flex justify-between items-start mb-1">
                                 <h4 class="font-bold text-sm text-white">Tech Head, Moot Court Society</h4>
-                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                                <span class="text-[10px] text-zinc-500 font-mono">2024</span>
                             </div>
                             <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-zinc-700 pl-2 group-hover:border-zinc-500 transition-colors">
                                 Managed technical/AV resources & troubleshooting for MCS.
@@ -354,11 +376,35 @@
                         <div>
                             <div class="flex justify-between items-start mb-1">
                                 <h4 class="font-bold text-sm text-white">Founding Member, Outreach Cell</h4>
-                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                                <span class="text-[10px] text-zinc-500 font-mono">2024</span>
                             </div>
                             <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-zinc-700 pl-2 group-hover:border-zinc-500 transition-colors">
                                 Standardized university branding guidelines for external correspondence.
                             </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trophy Cabinet (Moved Here) -->
+                <div class="bg-zinc-900 border-2 border-zinc-600 p-6 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-yellow-600/20 text-yellow-500 px-3 py-1 text-[10px] font-bold uppercase tracking-wider border-l border-b border-zinc-700">
+                        HONORS
+                    </div>
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="trophy" class="w-4 h-4 text-yellow-400"></i> Trophy Cabinet
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="border-l-2 border-yellow-400 pl-3 group/item hover:bg-zinc-800/50 transition-colors py-1">
+                            <p class="font-bold text-sm text-zinc-200">Ideate for India: Nationals</p>
+                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">Issued by MeitY & Intel</p>
+                        </div>
+                        <div class="border-l-2 border-zinc-600 pl-3 group/item hover:border-yellow-400 transition-colors py-1">
+                            <p class="font-bold text-sm text-zinc-200">Best Memorial Award</p>
+                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">NLU Meg Intra Moot '24</p>
+                        </div>
+                        <div class="border-l-2 border-zinc-600 pl-3 group/item hover:border-yellow-400 transition-colors py-1">
+                            <p class="font-bold text-sm text-zinc-200">Quarter Finalist</p>
+                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">CCI-MNLUCS Antitrust Moot</p>
                         </div>
                     </div>
                 </div>
@@ -390,21 +436,26 @@
             // Reset Tabs
             document.getElementById('content-experience').classList.remove('active');
             document.getElementById('content-education').classList.remove('active');
+            document.getElementById('content-publications').classList.remove('active');
             
             // Reset Button Styles
             const expBtn = document.getElementById('tab-experience');
             const eduBtn = document.getElementById('tab-education');
+            const pubBtn = document.getElementById('tab-publications');
 
-            expBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer";
-            eduBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer";
+            expBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
+            eduBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
+            pubBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
 
             // Activate Selected
             document.getElementById(`content-${tabName}`).classList.add('active');
 
             if(tabName === 'experience') {
-                expBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer";
+                expBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
+            } else if (tabName === 'education') {
+                eduBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-cyan-400 text-cyan-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
             } else {
-                eduBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-cyan-400 text-cyan-400 bg-zinc-900 cursor-pointer";
+                pubBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-fuchsia-400 text-fuchsia-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
             }
         }
     </script>
