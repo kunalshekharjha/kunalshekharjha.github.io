@@ -1,733 +1,412 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunal Shekhar - Portfolio</title>
+    <title>Kunal Shekhar | Cyber-Industrial CV</title>
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Font (Space Grotesk) -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700;800&display=swap');
+
         body {
-            font-family: 'Space Grotesk', sans-serif;
-            background-color: #000; /* bg-black */
-            color: #F3F4F6; /* text-gray-100 */
+            font-family: 'JetBrains Mono', monospace;
         }
-        /* Style for the active tab */
-        .tab-btn.active-tab {
-            background-color: #2563EB; /* bg-blue-600 */
-            color: white;
-            border-color: #2563EB;
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
         }
-        /* Custom scrollbar (optional but nice) */
-        ::-webkit-scrollbar {
-            width: 8px;
+        .animate-marquee {
+            animation: marquee 20s linear infinite;
         }
-        ::-webkit-scrollbar-track {
-            background: #111827; /* bg-gray-900 */
+
+        /* Custom selection colors */
+        ::selection {
+            background-color: #a3e635; /* lime-400 */
+            color: black;
         }
-        ::-webkit-scrollbar-thumb {
-            background: #3B82F6; /* bg-blue-500 */
-            border-radius: 4px;
+
+        /* Utility for hiding/showing tabs */
+        .tab-content {
+            display: none;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563EB; /* bg-blue-600 */
+        .tab-content.active {
+            display: block;
         }
         
-        /* Typing cursor animation */
-        .typed-cursor {
-            opacity: 1;
-            animation: blink 0.7s infinite;
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.3s ease-in;
         }
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
-<body class="antialiased bg-black text-gray-100">
+<body class="bg-zinc-950 text-zinc-100 min-h-screen p-4 md:p-8">
 
-    <!-- Particle Canvas Container -->
-    <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;">
-        <canvas id="particle-canvas"></canvas>
+    <div class="max-w-7xl mx-auto space-y-6">
+        
+        <!-- Header Section -->
+        <header class="grid md:grid-cols-12 gap-6">
+            <!-- Main ID Card -->
+            <div class="md:col-span-8 bg-zinc-900 border-2 border-zinc-500 shadow-[8px_8px_0px_0px_#84cc16] p-8 flex flex-col justify-between relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-lime-500 text-black border-l-2 border-b-2 border-zinc-900 px-4 py-1 font-bold text-xs uppercase tracking-widest transform translate-x-2 -translate-y-2 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-300">
+                    System: Online
+                </div>
+                
+                <div class="z-10 mt-4">
+                    <h1 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none mb-4 text-white">
+                        Kunal<span class="text-zinc-600">_</span><br/>Shekhar
+                    </h1>
+                    <div class="inline-block bg-lime-400 text-black px-3 py-1 text-lg font-bold mb-6 border border-lime-400">
+                        &gt; B.S. (DATA SCIENCE) LL.B. (HONS.)
+                    </div>
+                    <p class="text-lg text-zinc-300 max-w-2xl leading-relaxed border-l-2 border-lime-500/50 pl-4 font-light">
+                        Bridging <span class="text-cyan-400 font-bold">Tech</span> and <span class="text-fuchsia-400 font-bold">Law.</span><br> 
+                        TMT, AI Governance, Data Protection & Privacy, IPR, Cyber Security, FinTech Regulations
+                    </p>
+                </div>
+
+                <div class="mt-8 flex flex-wrap gap-4 z-10">
+                    <a href="mailto:kunal.s@nlumeg.ac.in" class="flex items-center gap-2 bg-zinc-800 border border-zinc-500 px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-lime-500 hover:text-black hover:border-lime-500 transition-all active:scale-95 cursor-pointer no-underline text-white">
+                        <i data-lucide="mail" class="w-4 h-4"></i>
+                        <span>Initiate Contact</span>
+                    </a>
+                    <a href="https://nlumeg-my.sharepoint.com/:b:/g/personal/kunal_s_nlumeg_ac_in/IQCFs6ymCyq4QZBDpCNQI44xAc51h-r-S0sHo-Cr7W5M-TI?e=JLVYLu" target="_blank" class="flex items-center gap-2 bg-transparent border border-zinc-500 px-6 py-3 text-sm font-bold uppercase tracking-wider hover:bg-white hover:text-black transition-all cursor-pointer no-underline text-white">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Export PDF
+                    </a>
+                </div>
+            </div>
+
+            <!-- Socials & Quick Links -->
+            <div class="md:col-span-4 flex flex-col gap-6">
+                <a href="https://www.linkedin.com/in/kunalshekharjha/" target="_blank" class="flex-1 bg-zinc-900 border-2 border-zinc-500 shadow-[8px_8px_0px_0px_#22d3ee] p-6 flex flex-col justify-center items-center text-center hover:bg-zinc-800 transition-all cursor-pointer group no-underline">
+                    <div class="text-cyan-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="linkedin" class="w-10 h-10" stroke-width="1.5"></i>
+                    </div>
+                    <h3 class="font-bold text-xl uppercase tracking-widest text-white">LinkedIn</h3>
+                    <p class="text-xs text-zinc-500 mt-2">/in/kunalshekharjha</p>
+                </a>
+                <a href="https://github.com/kunalshekharjha/" target="_blank" class="flex-1 bg-zinc-900 border-2 border-zinc-500 shadow-[8px_8px_0px_0px_#e879f9] p-6 flex flex-col justify-center items-center text-center hover:bg-zinc-800 transition-all cursor-pointer group no-underline">
+                    <div class="text-fuchsia-400 mb-2 group-hover:scale-110 transition-transform duration-300">
+                        <i data-lucide="github" class="w-10 h-10" stroke-width="1.5"></i>
+                    </div>
+                    <h3 class="font-bold text-xl uppercase tracking-widest text-white">GitHub</h3>
+                    <p class="text-xs text-zinc-500 mt-2">/kunalshekharjha</p>
+                </a>
+            </div>
+        </header>
+
+        <!-- Marquee Skills -->
+        <div class="bg-lime-400 text-black border-y-2 border-black py-3 overflow-hidden">
+            <div class="animate-marquee whitespace-nowrap font-bold text-sm tracking-widest flex gap-8 uppercase">
+                <!-- Content duplicated for seamless loop -->
+                <span class="flex items-center gap-4">Python <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Legal Research <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">AI Governance <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Drafting <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Data Protection <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Digital Forensics <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Web Dev <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Critical Thinking <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">FinTech Regs <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Cyber Security <span class="text-black text-xs">///</span></span>
+                
+                <!-- Duplicate -->
+                <span class="flex items-center gap-4">Python <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Legal Research <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">AI Governance <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Drafting <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Data Protection <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Digital Forensics <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Web Dev <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Critical Thinking <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">FinTech Regs <span class="text-black text-xs">///</span></span>
+                <span class="flex items-center gap-4">Cyber Security <span class="text-black text-xs">///</span></span>
+            </div>
+        </div>
+
+        <!-- Main Content Grid -->
+        <div class="grid md:grid-cols-12 gap-6">
+            
+            <!-- Left Column: Experience & Education -->
+            <div class="md:col-span-8 space-y-6">
+                
+                <!-- Tab Navigation -->
+                <div class="flex border-b border-zinc-700">
+                    <button onclick="switchTab('experience')" id="tab-experience" class="px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer">
+                        Experience_Log
+                    </button>
+                    <button onclick="switchTab('education')" id="tab-education" class="px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer">
+                        Education_Data
+                    </button>
+                </div>
+
+                <!-- Content Area -->
+                <div class="bg-zinc-900 border-2 border-zinc-600 p-6 md:p-8 min-h-[500px]">
+                    
+                    <!-- Experience Tab -->
+                    <div id="content-experience" class="tab-content active space-y-10 fade-in">
+                        
+                        <!-- Job 1 -->
+                        <div class="relative pl-8 border-l border-lime-500 pb-2 group">
+                            <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-lime-500 border-lime-500 transition-colors"></span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h4 class="text-lg font-bold flex items-center gap-2 text-white">
+                                    Ikigai Law <i data-lucide="cpu" class="w-4 h-4 text-lime-400"></i>
+                                </h4>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Feb 2026 - Present</span>
+                            </div>
+                            <p class="text-base font-medium mb-2 text-lime-400">Internship</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Specializing in Technology Law. Handling data protection and AI governance matters. Merging technical understanding with legal frameworks.</p>
+                        </div>
+
+                        <!-- Job 2 -->
+                        <div class="relative pl-8 border-l border-zinc-700 pb-2 group">
+                            <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-zinc-900 border-zinc-600 group-hover:border-zinc-400 transition-colors"></span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h4 class="text-lg font-bold flex items-center gap-2 text-zinc-300 group-hover:text-white">
+                                    L.S. Davar & Co. <i data-lucide="file-text" class="w-4 h-4"></i>
+                                </h4>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Jan 2026</span>
+                            </div>
+                            <p class="text-base font-medium mb-2 text-zinc-400">Internship</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Trademark filing procedures and judicial precedent analysis. Drafted internal case summaries for senior associates focusing on IP enforcement.</p>
+                        </div>
+
+                        <!-- Job 3 -->
+                        <div class="relative pl-8 border-l border-zinc-700 pb-2 group">
+                            <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-zinc-900 border-zinc-600 group-hover:border-zinc-400 transition-colors"></span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h4 class="text-lg font-bold flex items-center gap-2 text-zinc-300 group-hover:text-white">
+                                    Steel Authority of India Ltd. <i data-lucide="shield" class="w-4 h-4"></i>
+                                </h4>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Jun 2025</span>
+                            </div>
+                            <p class="text-base font-medium mb-2 text-zinc-400">Internship</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Contract vetting and labour compliance. Analyzed workflows to integrate industrial processes with regulatory frameworks.</p>
+                        </div>
+
+                         <!-- Job 4 -->
+                         <div class="relative pl-8 border-l border-zinc-700 pb-2 group">
+                            <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-zinc-900 border-zinc-600 group-hover:border-zinc-400 transition-colors"></span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h4 class="text-lg font-bold flex items-center gap-2 text-zinc-300 group-hover:text-white">
+                                    Jharkhand State Legal Services <i data-lucide="scale" class="w-4 h-4"></i>
+                                </h4>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Feb 2025</span>
+                            </div>
+                            <p class="text-base font-medium mb-2 text-zinc-400">Internship</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Hands-on experience in ADR and family/criminal court proceedings.</p>
+                        </div>
+
+                        <!-- Job 5 -->
+                        <div class="relative pl-8 border-l border-zinc-700 pb-2 group">
+                            <span class="absolute -left-[9px] top-0 w-4 h-4 rounded-full border-2 bg-zinc-900 border-zinc-600 group-hover:border-zinc-400 transition-colors"></span>
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h4 class="text-lg font-bold flex items-center gap-2 text-zinc-300 group-hover:text-white">
+                                    Ministry of Law and Justice <i data-lucide="scroll" class="w-4 h-4"></i>
+                                </h4>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Jan 2025</span>
+                            </div>
+                            <p class="text-base font-medium mb-2 text-zinc-400">Internship</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Assisted in drafting and vetting legislative texts, bills, and ordinances. Gained experience in statutory interpretation and public policy analysis.</p>
+                        </div>
+
+                    </div>
+
+                    <!-- Education Tab -->
+                    <div id="content-education" class="tab-content fade-in">
+                        <div class="space-y-8">
+                            <!-- University Block -->
+                            <div class="border border-zinc-700 p-6 bg-zinc-950/50 relative">
+                                <div class="absolute top-0 right-0 bg-cyan-900 text-cyan-200 px-3 py-1 text-xs font-bold uppercase tracking-wider">Status: Current</div>
+                                <h3 class="text-2xl font-bold text-white">National Law University Meghalaya</h3>
+                                <p class="text-lg text-cyan-400 mt-2 font-light">B.S. (Data Science) LL.B. (Hons.)</p>
+                                <div class="flex items-center gap-4 mt-2 text-sm text-zinc-500 border-b border-zinc-800 pb-4">
+                                    <span>2023 - 2028</span>
+                                    <span>•</span>
+                                    <span>Shillong, Meghalaya</span>
+                                </div>
+                                <div class="mt-4 flex gap-2 flex-wrap">
+                                    
+                                </div>
+                            </div>
+                            
+                            <!-- Split Grid: Certifications & Awards -->
+                            <div class="grid md:grid-cols-2 gap-8">
+                                <!-- Certifications -->
+                                <div class="pl-6 border-l border-zinc-700">
+                                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                        <i data-lucide="award" class="w-4 h-4 text-lime-400"></i> Certifications
+                                    </h3>
+                                    <ul class="space-y-4 text-sm text-zinc-400">
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
+                                            <span>Digital Productivity - United Nations</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
+                                            <span>Web Development - Eduonix</span>
+                                        </li>
+                                        <li class="flex items-start gap-3">
+                                            <span class="mt-1.5 w-1.5 h-1.5 bg-lime-400 rounded-full shrink-0"></span>
+                                            <span>Data Science & ML - YBI</span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Trophy Cabinet (Moved Here) -->
+                                <div class="bg-zinc-800/30 p-4 border border-zinc-700">
+                                    <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                                        <i data-lucide="trophy" class="w-4 h-4 text-yellow-400"></i> Trophy Cabinet
+                                    </h3>
+                                    <div class="space-y-3">
+                                        <div class="border-l-2 border-yellow-400 pl-3">
+                                            <p class="font-bold text-sm text-zinc-200">Ideate for India: Nationals</p>
+                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">Issued by MeitY & Intel</p>
+                                        </div>
+                                        <div class="border-l-2 border-zinc-600 pl-3">
+                                            <p class="font-bold text-sm text-zinc-200">Best Memorial Award</p>
+                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">NLU Meg Intra Moot '24</p>
+                                        </div>
+                                        <div class="border-l-2 border-zinc-600 pl-3">
+                                            <p class="font-bold text-sm text-zinc-200">Quarter Finalist</p>
+                                            <p class="text-[10px] uppercase mt-1 text-zinc-500 tracking-wider">CCI-MNLUCS Antitrust Moot</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Right Column: Stats & Skills & Leadership -->
+            <div class="md:col-span-4 space-y-6">
+                
+                <!-- Skills Stack Box (Merged) -->
+                <div class="bg-zinc-900 border-2 border-zinc-600 p-6">
+                    <div class="flex items-center gap-3 border-b border-zinc-700 pb-4 mb-4">
+                        <i data-lucide="layers" class="w-5 h-5 text-lime-400"></i>
+                        <h3 class="font-bold text-sm uppercase tracking-widest text-white">Skills Stack</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <!-- Core Tech -->
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-lime-500 hover:text-lime-400 transition-colors cursor-default">Python</div>
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-lime-500 hover:text-lime-400 transition-colors cursor-default">Web Development</div>
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-lime-500 hover:text-lime-400 transition-colors cursor-default">Digital Productivity</div>
+                        
+                        <!-- Core Legal -->
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-fuchsia-400 hover:text-fuchsia-400 transition-colors cursor-default">Legal Research</div>
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-fuchsia-400 hover:text-fuchsia-400 transition-colors cursor-default">Drafting & Documentation</div>
+                        
+                        <!-- Soft/Cognitive -->
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-cyan-400 hover:text-cyan-400 transition-colors cursor-default">Critical Thinking</div>
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-cyan-400 hover:text-cyan-400 transition-colors cursor-default">Effective Communication</div>
+                        <div class="bg-zinc-950 border border-zinc-700 py-2 px-3 text-xs text-center text-zinc-300 hover:border-cyan-400 hover:text-cyan-400 transition-colors cursor-default">Teamwork</div>
+                    </div>
+                </div>
+
+                <!-- Positions of Responsibility (Added Here) -->
+                <div class="bg-zinc-900 border-2 border-zinc-600 p-6 relative overflow-hidden group">
+                    <div class="absolute top-0 right-0 bg-zinc-800 text-zinc-400 px-3 py-1 text-[10px] font-bold uppercase tracking-wider border-l border-b border-zinc-700">
+                        LEADERSHIP
+                    </div>
+                    <h3 class="font-bold text-sm uppercase tracking-widest text-white mb-6 flex items-center gap-2">
+                        <i data-lucide="flag" class="w-4 h-4 text-fuchsia-400"></i>Positions of Responsibility
+                    </h3>
+                    
+                    <div class="space-y-6">
+                        <!-- Item 1 -->
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-sm text-white">Google Student Ambassador</h4>
+                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                            </div>
+                            <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-fuchsia-500 pl-2">
+                                Organized AI workshops & led Gemini demos. Liaison between campus & Google.
+                            </p>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-sm text-white">Tech Head, Moot Court Society</h4>
+                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                            </div>
+                            <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-zinc-700 pl-2 group-hover:border-zinc-500 transition-colors">
+                                Managed technical/AV resources & troubleshooting for MCS.
+                            </p>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div>
+                            <div class="flex justify-between items-start mb-1">
+                                <h4 class="font-bold text-sm text-white">Founding Member, Outreach Cell</h4>
+                                <span class="text-[10px] text-zinc-500 font-mono"></span>
+                            </div>
+                            <p class="text-xs text-zinc-400 leading-relaxed border-l-2 border-zinc-700 pl-2 group-hover:border-zinc-500 transition-colors">
+                                Standardized university branding guidelines for external correspondence.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="bg-zinc-900 text-zinc-500 p-8 border-t border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4 text-xs tracking-widest uppercase">
+            <div>
+                &copy; Kunal Shekhar. All rights reserved.
+            </div>
+            <div class="flex gap-6">
+                <a href="https://www.linkedin.com/in/kunalshekharjha/" class="hover:text-lime-400 transition-colors no-underline">LinkedIn</a>
+                <a href="https://github.com/kunalshekharjha/" class="hover:text-lime-400 transition-colors no-underline">GitHub</a>
+                <a href="mailto:kunal.s@nlumeg.ac.in" class="hover:text-lime-400 transition-colors no-underline">Email</a>
+            </div>
+        </footer>
+
     </div>
 
-    <!-- Header & Navbar -->
-    <header class="bg-black/80 backdrop-blur-sm fixed w-full z-50 top-0 shadow-lg">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo/Name -->
-                <div class="flex-shrink-0">
-                    <a href="#home" class="text-2xl font-bold text-white">Kunal Shekhar</a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#home" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                        <a href="#about" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">About</a>
-                        <a href="#experience" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Experience</a>
-                        <a href="#skills" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Skills</a>
-                        <a href="#projects" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Projects</a>
-                        <a href="#accomplishments" class="text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Accomplishments</a>
-                        <a href="#contact" class="ml-4 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-medium transition-colors duration-300">Contact</a>
-                    </div>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="menu-btn" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none">
-                        <span class="sr-only">Open main menu</span>
-                        <i data-lucide="menu" id="menu-icon-open" class="block h-6 w-6"></i>
-                        <i data-lucide="x" id="menu-icon-close" class="hidden h-6 w-6"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- Mobile Menu Panel -->
-        <div id="mobile-menu" class="hidden md:hidden bg-black">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Home</a>
-                <a href="#about" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">About</a>
-                <a href="#experience" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Experience</a>
-                <a href="#skills" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Skills</a>
-                <a href="#projects" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Projects</a>
-                <a href="#accomplishments" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Accomplishments</a>
-                <a href="#contact" class="mobile-menu-link block text-gray-300 hover:bg-gray-800 hover:text-white px-3 py-2 rounded-md text-base font-medium">Contact</a>
-            </div>
-        </div>
-    </header>
-
-    <main style="position: relative; z-index: 1;">
-        <!-- Hero Section -->
-        <section id="home" class="min-h-screen flex items-center justify-center text-center px-4 pt-16">
-            <div class="max-w-4xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight min-h-[45px] md:min-h-[75px]">
-                    <span id="typed-text"></span><span class="typed-cursor">|</span>
-                </h1>
-                <p class="mt-6 text-xl md:text-2xl text-blue-300 font-medium">
-                    Data Science × Law
-                </p>
-                     
-                <div class="mt-10 flex justify-center">
-                    <a href="#contact" class="bg-gray-800 hover:bg-gray-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-transform duration-300 hover:scale-105 shadow-lg">
-                        Get In Touch
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- About Me Section -->
-        <section id="about" class="py-20 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">About Me</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-                
-                <div class="max-w-4xl mx-auto text-center">
-                    <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                        Most lawyers are intimidated by code. Most developers view regulations as a roadblock. I am perusing a career that speaks both languages. As a dual-degree candidate in Data Science and Law, I don't just study acts and statutes — I understand the algorithms they govern. I aim at building the technical literacy required to navigate the next generation of legal challenges.
-                    </p>
-                    <!-- <div class="mt-8">
-                        <h4 class="text-xl font-semibold text-white mb-3">Languages</h4>
-                        <span class="inline-block bg-gray-700 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mr-2 mb-2">English (Professional Working Proficiency)</span>
-                        <span class="inline-block bg-gray-700 text-blue-300 px-4 py-2 rounded-full text-sm font-medium mb-2">Hindi (Native or Bilingual Proficiency)</span>
-                    </div> -->
-                </div>
-            </div>
-        </section>
-
-        <!-- Education Section -->
-        <section id="education" class="py-20">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Education</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-                
-                <div class="max-w-3xl mx-auto">
-                    <div class="bg-gray-900 rounded-xl shadow-2xl p-8 transform transition-transform duration-300 hover:scale-[1.02]">
-                        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-2">
-                            <h3 class="text-2xl font-semibold text-white">National Law University Meghalaya</h3>
-                            <span class="text-sm text-gray-400 mt-2 sm:mt-0">2023 – 2028</span>
-                        </div>
-                        <p class="text-lg text-blue-300 font-medium">
-                            Bachelor of Science (Data Science) and Bachelor of Laws (Hons.)
-                        </p>
-                        <p class="text-lg text-blue-300 font-medium">
-                            [B.S. LL.B. (Hons.)]
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Experience Section (Dynamic Tabs) -->
-        <section id="experience" class="py-20 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Professional Experience</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-
-                <!-- Tab Buttons -->
-                <div class="flex justify-center mb-8 space-x-2 md:space-x-4">
-                    <button data-tab="positions" class="tab-btn active-tab text-sm md:text-base font-medium px-4 py-2 md:px-6 md:py-3 rounded-lg border-2 border-transparent transition-all duration-300">
-                        Positions of Responsibility
-                    </button>
-                    <button data-tab="internships" class="tab-btn text-sm md:text-base font-medium px-4 py-2 md:px-6 md:py-3 rounded-lg border-2 border-gray-700 text-gray-300 hover:border-blue-500 hover:text-white transition-all duration-300">
-                        Internships
-                    </button>
-                </div>
-
-                <!-- Tab Content -->
-                <div class="max-w-4xl mx-auto">
-                    <!-- Positions Content -->
-                    <div id="positions" class="tab-content space-y-6">
-                        <!-- Google Student Ambassador -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Student Ambassador</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Nov 2025 – Present</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">Google</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Organized AI-focused workshops and collaborated with college festivals to promote innovation.</li>
-                                <li>Led hands-on demos to inspire student engagement & foster creative applications of Google Gemini.</li>
-                                <li>Acted as a liaison between campus and Google, sharing regular insights, feedback, and updates.</li>
-                            </ul>
-                        </div>
-                        
-                        <!-- Tech Head at Moot Court Society -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Tech Head at Moot Court Society</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Oct 2023 – Oct 2024</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">National Law University Meghalaya</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Oversaw and managed all technical, audio-visual, and IT resources for the Moot Court Society.</li>
-                                <li>Ensured smooth operation and provided troubleshooting for competitions and events.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Member at Outreach & External Relationship Cell -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Member at Outreach & External Relationship Cell</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Sep 2023 – Sep 2024</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">National Law University Meghalaya</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Contributed to Graphic Design, Video Editing, Web Development, and Digital Marketing efforts.</li>
-                                <li>Managed social media presence and YouTube channel for the university cell.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Internships Content -->
-                    <div id="internships" class="tab-content hidden space-y-6">
-                        <!-- SAIL -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Legal Intern</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Jun 2025 (1 Month)</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">Steel Authority of India Limited (SAIL)</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Gained hands-on exposure to core operational and compliance functions within the Legal Department.</li>
-                                <li>Developed a practical understanding of contract vetting, labour compliance, and service matters.</li>
-                            </ul>
-                        </div>
-
-                        <!-- JHALSA -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Legal Intern</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Feb 2025 (1 Month)</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">Jharkhand State Legal Services Authority</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Gained experience in legal aid, ADR, and proceedings in family courts, Lok Adalats, and criminal courts.</li>
-                                <li>Created legal awareness materials and drafted reports on NALSA acts and regulations.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Ministry of Law and Justice -->
-                        <div class="bg-black rounded-xl shadow-2xl p-6 md:p-8 transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                                <h3 class="text-2xl font-semibold text-white">Legal Intern</h3>
-                                <span class="text-sm text-gray-400 mt-2 sm:mt-0">Jan 2025 (1 Month)</span>
-                            </div>
-                            <p class="text-lg text-blue-300 font-medium mb-4">Ministry of Law and Justice</p>
-                            <ul class="list-disc list-inside text-gray-300 space-y-2">
-                                <li>Assisted in drafting and vetting legislative texts, including bills, ordinances, and regulatory frameworks.</li>
-                                <li>Gained experience in legislative drafting, statutory interpretation, and public policy analysis.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Skills & Abilities</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-
-                <!-- Technical Skills -->
-                <div class="mb-12">
-                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center justify-center">
-                        <i data-lucide="code-2" class="w-8 h-8 mr-3 text-blue-400"></i> Technical Skills
-                    </h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-badge">Python</span>
-                        <span class="skill-badge">Web Development</span>
-                        <span class="skill-badge">Data Science</span>
-                    </div>
-                </div>
-
-                <!-- Legal Skills -->
-                <div class="mb-12">
-                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center justify-center">
-                        <i data-lucide="scale" class="w-8 h-8 mr-3 text-blue-400"></i> Legal Skills
-                    </h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-badge">Legal Research</span>
-                        <span class="skill-badge">Drafting & Documentation</span>
-                        <span class="skill-badge">Statutory Interpretation</span>
-                        <span class="skill-badge">Policy Analysis</span>
-                    </div>
-                </div>
-
-                <!-- Soft Skills -->
-                <div class="mb-12">
-                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center justify-center">
-                        <i data-lucide="users-2" class="w-8 h-8 mr-3 text-blue-400"></i> Soft Skills
-                    </h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-badge">Effective Communication</span>
-                        <span class="skill-badge">Teamwork</span>
-                        <span class="skill-badge">Critical Thinking</span>
-                        <span class="skill-badge">Analytical Prowess</span>
-                    </div>
-                </div>
-
-                <!-- Certifications -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-white mb-6 flex items-center justify-center">
-                        <i data-lucide="award" class="w-8 h-8 mr-3 text-blue-400"></i> Certifications
-                    </h3>
-                    <div class="flex flex-wrap justify-center gap-4">
-                        <span class="skill-badge">Digital Marketing (Google)</span>
-                        <span class="skill-badge">Web Development (Eduonix)</span>
-                        <span class="skill-badge">Digital Productivity (United Nations)</span>
-                    </div>
-                </div>
-            </div>
-            <!-- Custom style for skill badges -->
-            <style>
-                .skill-badge {
-                    background-color: #111827; /* bg-gray-900 */
-                    color: #93C5FD; /* text-blue-300 */
-                    padding: 0.5rem 1rem;
-                    border-radius: 9999px;
-                    font-weight: 500;
-                    border: 1px solid #374151; /* border-gray-700 */
-                    transition: all 0.2s ease-in-out;
-                }
-                .skill-badge:hover {
-                    background-color: #1F2937; /* bg-gray-800 */
-                    color: white;
-                    transform: translateY(-2px);
-                }
-            </style>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="py-20 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Project</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-                
-                <div class="max-w-3xl mx-auto">
-                    <div class="bg-black rounded-xl shadow-2xl p-8 overflow-hidden transform transition-transform duration-300 hover:scale-[1.02] hover:shadow-blue-500/30">
-                        <span class="inline-block bg-green-500 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4">
-                            Winner - National Level
-                        </span>
-                        <h3 class="text-3xl font-bold text-white mb-3">WPTA: Web Portal for Tracking Application</h3>
-                        <p class="text-lg text-blue-300 font-medium mb-4">Ideate for India - National Challenge</p>
-                        <p class="text-gray-300 leading-relaxed">
-                            A project that won the national level award issued by the Ministry of Electronics and Information Technology & Intel. I was awarded by the Hon’ble then Union Minister at India Habitat Centre, New Delhi for this work.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Accomplishments Section -->
-        <section id="accomplishments" class="py-20">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Accomplishments</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Publication Card -->
-                    <div class="bg-gray-900 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2">
-                        <div class="bg-blue-600 p-4 rounded-full mb-4">
-                            <i data-lucide="book-open-text" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Publication</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            ‘Empowering Consumer Dispute Resolution in E-Commerce Via Digital Forensics’
-                        </p>
-                        <a href="https://www.livelaw.in/articles/empowering-consumer-dispute-resolution-e-commerce-via-digital-forensics-273718" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-400 font-medium hover:text-blue-300 transition-colors">Published at Live Law</a>
-                    </div>
-
-                    <!-- GitHub Profile Card -->
-                    <div class="bg-gray-900 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2">
-                        <div class="bg-blue-600 p-4 rounded-full mb-4">
-                            <i data-lucide="github" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">GitHub Profile</h3>
-                        <p class="text-gray-300 leading-relaxed">
-                            Explore my technical projects, code repositories, and contributions.
-                        </p>
-                        <a href="https://github.com/kunalshekharjha/" target="_blank" rel="noopener noreferrer" class="mt-3 text-blue-400 font-medium hover:text-blue-300 transition-colors">View on GitHub</a>
-                    </div>
-
-                    <!-- Awards Card - REMOVED -->
-                    
-                    <!-- Mooting & Volunteering Card -->
-                    <div class="bg-gray-900 rounded-xl shadow-2xl p-8 flex flex-col items-center text-center transform transition-transform duration-300 hover:-translate-y-2">
-                        <div class="bg-blue-600 p-4 rounded-full mb-4">
-                            <i data-lucide="gavel" class="w-10 h-10 text-white"></i>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-white mb-3">Co-Curricular</h3>
-                        <ul class="list-disc list-inside text-gray-300 text-left space-y-2">
-                            <li>Quarter Finalist, 1st MNLU-CS National Antitrust Moot</li>
-                            <li>Runners Up, 1st Intra NLU Meg Moot Court Competition</li>
-                            <li>Best Memorial Award (Petitioner & Respondent)</li>
-                            <li>UN Voices of Youth (Member)</li>
-                            <li>CRY – Child Rights and You (Volunteer)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="py-20 bg-gray-900">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
-                    <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
-                    <!-- <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-                        I'm always open to discussing new opportunities, collaborations, or just to chat about tech and law.
-                    </p> -->
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-2xl mx-auto">
-                    <!-- Email -->
-                    <a href="mailto:kunal.s@nlumeg.ac.in" class="bg-black p-8 rounded-xl shadow-xl flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105 hover:bg-gray-800">
-                        <i data-lucide="mail" class="w-12 h-12 text-blue-400 mb-4"></i>
-                        <h4 class="text-xl font-semibold text-white mb-1">Email</h4>
-                        <p class="text-gray-300 break-all">kunal.s@nlumeg.ac.in</p>
-                    </a>
-                    
-                    <!-- Phone - REMOVED -->
-
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/kunalshekharjha/" target="_blank" rel="noopener noreferrer" class="bg-black p-8 rounded-xl shadow-xl flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105 hover:bg-gray-800">
-                        <i data-lucide="linkedin" class="w-12 h-12 text-blue-400 mb-4"></i>
-                        <h4 class="text-xl font-semibold text-white mb-1">LinkedIn</h4>
-                        <p class="text-gray-300">kunalshekharjha</p>
-                        
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black py-8" style="position: relative; z-index: 1;">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-400">Developed with ❤️ and Coffee by KSJ</p>
-        </div>
-    </footer>
-
+    <!-- Scripts -->
     <script>
-        // Wait for the DOM to be fully loaded before running scripts
-        document.addEventListener('DOMContentLoaded', (event) => {
-            // Initialize Lucide Icons
-            try {
-                if (typeof lucide !== 'undefined') {
-                    lucide.createIcons();
-                } else {
-                    console.error('Lucide library not loaded.');
-                }
-            } catch (e) {
-                console.error('Error creating lucide icons:', e);
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Tab Switching Logic
+        function switchTab(tabName) {
+            // Reset Tabs
+            document.getElementById('content-experience').classList.remove('active');
+            document.getElementById('content-education').classList.remove('active');
+            
+            // Reset Button Styles
+            const expBtn = document.getElementById('tab-experience');
+            const eduBtn = document.getElementById('tab-education');
+
+            expBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer";
+            eduBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer";
+
+            // Activate Selected
+            document.getElementById(`content-${tabName}`).classList.add('active');
+
+            if(tabName === 'experience') {
+                expBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer";
+            } else {
+                eduBtn.className = "px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-cyan-400 text-cyan-400 bg-zinc-900 cursor-pointer";
             }
-
-            // Mobile Menu Toggle
-            const menuBtn = document.getElementById('menu-btn');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const menuIconOpen = document.getElementById('menu-icon-open');
-            const menuIconClose = document.getElementById('menu-icon-close');
-
-            menuBtn.addEventListener('click', () => {
-                mobileMenu.classList.toggle('hidden');
-                menuIconOpen.classList.toggle('hidden');
-                menuIconClose.classList.toggle('hidden');
-            });
-
-            // Close mobile menu when a link is clicked
-            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-            mobileMenuLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    mobileMenu.classList.add('hidden');
-                    menuIconOpen.classList.remove('hidden');
-                    menuIconClose.classList.add('hidden');
-                });
-            });
-
-            // Experience Tabs
-            const tabButtons = document.querySelectorAll('.tab-btn');
-            const tabContents = document.querySelectorAll('.tab-content');
-
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    // Deactivate all buttons and hide all content
-                    tabButtons.forEach(btn => btn.classList.remove('active-tab', 'border-blue-600', 'text-white'));
-                    tabButtons.forEach(btn => btn.classList.add('border-gray-600', 'text-gray-300'));
-                    
-                    tabContents.forEach(content => content.classList.add('hidden'));
-
-                    // Activate the clicked button and show its content
-                    button.classList.add('active-tab', 'border-blue-600', 'text-white');
-                    button.classList.remove('border-gray-600', 'text-gray-300');
-                    const tabId = button.getAttribute('data-tab');
-                    document.getElementById(tabId).classList.remove('hidden');
-                });
-            });
-
-            // --- Typing Text Animation ---
-            const typedTextSpan = document.getElementById('typed-text');
-            const cursorSpan = document.querySelector('.typed-cursor');
-            if (typedTextSpan && cursorSpan) {
-                const textArray = ["I'M FREELANCER", "I'M LAWYER", "I'M KUNAL SHEKHAR"];
-                const typingDelay = 150;
-                const erasingDelay = 100;
-                const newTextDelay = 2000; // Delay before starting to type new text
-                let textArrayIndex = 0;
-                let charIndex = 0;
-                let isDeleting = false;
-
-                function type() {
-                    const currentText = textArray[textArrayIndex];
-                    
-                    if (isDeleting) {
-                        // Remove char
-                        typedTextSpan.textContent = currentText.substring(0, charIndex - 1);
-                        charIndex--;
-                    } else {
-                        // Add char
-                        typedTextSpan.textContent = currentText.substring(0, charIndex + 1);
-                        charIndex++;
-                    }
-
-                    // Ensure cursor is always visible during typing
-                    cursorSpan.style.display = 'inline';
-
-                    // If text is fully typed
-                    if (!isDeleting && charIndex === currentText.length) {
-                        // If it's the last text, stop the cursor blinking and animation
-                        // REMOVED: if (textArrayIndex === textArray.length - 1) { ... }
-                        
-                        isDeleting = true;
-                        setTimeout(type, newTextDelay); // Pause before deleting
-                    } 
-                    // If text is fully deleted
-                    else if (isDeleting && charIndex === 0) {
-                        isDeleting = false;
-                        textArrayIndex++;
-                        // If we've gone through all texts, loop back to the start
-                        if (textArrayIndex === textArray.length) {
-                            textArrayIndex = 0;
-                        }
-                        setTimeout(type, typingDelay); // Move to next text
-                    } 
-                    // Continue typing/deleting
-                    else {
-                        setTimeout(type, isDeleting ? erasingDelay : typingDelay);
-                    }
-                }
-                
-                // Start the typing animation
-                setTimeout(type, newTextDelay / 2);
-            }
-
-            // --- Particle Network Background ---
-            const canvas = document.getElementById('particle-canvas');
-            if (canvas) {
-                const ctx = canvas.getContext('2d');
-                let particlesArray;
-
-                // Get mouse position
-                let mouse = {
-                    x: null,
-                    y: null,
-                    radius: 150 // Interaction radius
-                };
-
-                window.addEventListener('mousemove', (event) => {
-                    mouse.x = event.x;
-                    mouse.y = event.y;
-                });
-
-                // Particle class
-                class Particle {
-                    constructor(x, y, directionX, directionY, size, color) {
-                        this.x = x;
-                        this.y = y;
-                        this.directionX = directionX;
-                        this.directionY = directionY;
-                        this.size = size;
-                        this.color = color;
-                    }
-
-                    // Method to draw individual particle
-                    draw() {
-                        ctx.beginPath();
-                        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2, false);
-                        ctx.fillStyle = 'rgba(96, 165, 250, 0.1)'; // Faint text-blue-400
-                        ctx.fill();
-                    }
-
-                    // Check particle position, check mouse position, move the particle
-                    update() {
-                        // Check if particle is still within canvas
-                        if (this.x > canvas.width || this.x < 0) {
-                            this.directionX = -this.directionX;
-                        }
-                        if (this.y > canvas.height || this.y < 0) {
-                            this.directionY = -this.directionY;
-                        }
-
-                        // Move the particle
-                        this.x += this.directionX;
-                        this.y += this.directionY;
-
-                        // Draw the particle
-                        this.draw();
-                    }
-                }
-
-                // Create particle array
-                function init() {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                    particlesArray = [];
-                    let numberOfParticles = (canvas.height * canvas.width) / 9000;
-                    for (let i = 0; i < numberOfParticles * 0.5; i++) { // Fewer particles for subtlety
-                        let size = (Math.random() * 2) + 1; // size: 1 to 3
-                        let x = (Math.random() * ((canvas.width - size * 2) - (size * 2)) + size * 2);
-                        let y = (Math.random() * ((canvas.height - size * 2) - (size * 2)) + size * 2);
-                        let directionX = (Math.random() * .4) - 0.2; // -0.2 to 0.2
-                        let directionY = (Math.random() * .4) - 0.2; // -0.2 to 0.2
-                        let color = 'rgba(96, 165, 250, 0.1)';
-
-                        particlesArray.push(new Particle(x, y, directionX, directionY, size, color));
-                    }
-                }
-
-                // Animation loop
-                function animate() {
-                    requestAnimationFrame(animate);
-                    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-                    if (particlesArray) {
-                        for (let i = 0; i < particlesArray.length; i++) {
-                            particlesArray[i].update();
-                        }
-                        connect();
-                    }
-                }
-
-                // Check if particles are close enough to connect
-                function connect() {
-                    let opacityValue = 1;
-                    let connectDistance = 100; // 100px
-                    for (let a = 0; a < particlesArray.length; a++) {
-                        for (let b = a; b < particlesArray.length; b++) {
-                            let distance = ((particlesArray[a].x - particlesArray[b].x) * (particlesArray[a].x - particlesArray[b].x)) +
-                                         ((particlesArray[a].y - particlesArray[b].y) * (particlesArray[a].y - particlesArray[b].y));
-                            
-                            // Connection between particles
-                            if (distance < (connectDistance * connectDistance)) {
-                                opacityValue = 1 - (distance / (connectDistance * connectDistance));
-                                ctx.strokeStyle = 'rgba(96, 165, 250, ' + opacityValue * 0.3 + ')'; // Faint blue lines, 30% opacity max
-                                ctx.lineWidth = 1;
-                                ctx.beginPath();
-                                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
-                                ctx.stroke();
-                            }
-                        }
-
-                        // Connection to mouse
-                        if (mouse.x && mouse.y) {
-                            let mouseDistance = ((particlesArray[a].x - mouse.x) * (particlesArray[a].x - mouse.x)) +
-                                              ((particlesArray[a].y - mouse.y) * (particlesArray[a].y - mouse.y));
-                            
-                            if (mouseDistance < (mouse.radius * mouse.radius)) {
-                                opacityValue = 1 - (mouseDistance / (mouse.radius * mouse.radius));
-                                ctx.strokeStyle = 'rgba(96, 165, 250, ' + opacityValue * 0.7 + ')'; // Brighter blue for mouse, 70% opacity max
-                                ctx.lineWidth = 1;
-                                ctx.beginPath();
-                                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
-                                ctx.lineTo(mouse.x, mouse.y);
-                                ctx.stroke();
-                            }
-                        }
-                    }
-                }
-
-                // Resize event
-                window.addEventListener('resize', () => {
-                    canvas.width = window.innerWidth;
-                    canvas.height = window.innerHeight;
-                    mouse.radius = 150;
-                    init();
-                });
-
-                // Mouse out event
-                window.addEventListener('mouseout', () => {
-                    mouse.x = undefined;
-                    mouse.y = undefined;
-                });
-
-                // Initial call
-                init();
-                animate();
-            }
-        });
+        }
     </script>
-
 </body>
 </html>
