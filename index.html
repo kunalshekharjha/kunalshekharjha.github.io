@@ -64,12 +64,12 @@
                 
                 <div class="z-10 mt-4 flex flex-col md:flex-row gap-6 md:gap-8 items-start">
                     
-                    <!-- Profile Photo (Replace src with your actual image path) -->
+                    <!-- Profile Photo -->
                     <div class="shrink-0 relative group/pic cursor-pointer">
                         <!-- Brutalist Offset Shadow -->
                         <div class="absolute inset-0 bg-lime-500 translate-x-2 translate-y-2 border-2 border-zinc-900 transition-transform duration-300 group-hover/pic:translate-x-3 group-hover/pic:translate-y-3"></div>
                         <!-- Actual Image -->
-                        <img src="https://photos.app.goo.gl/Dbxmovj5KyZiCkcXA" alt="Kunal Shekhar" class="relative z-10 w-32 h-32 md:w-40 md:h-40 object-cover border-2 border-zinc-500 grayscale group-hover/pic:grayscale-0 transition-all duration-500" />
+                        <img src="profile.jpg" alt="Kunal Shekhar" onerror="this.src='https://ui-avatars.com/api/?name=Kunal+Shekhar&background=a3e635&color=000&size=160&font-size=0.4'" class="relative z-10 w-32 h-32 md:w-40 md:h-40 object-cover border-2 border-zinc-500 grayscale group-hover/pic:grayscale-0 transition-all duration-500" />
                         <!-- Cyber Overlay Text -->
                         <div class="absolute bottom-2 right-2 z-20 bg-zinc-950/80 px-1.5 py-0.5 text-[8px] text-lime-400 font-mono border border-lime-400/50 backdrop-blur-sm opacity-0 group-hover/pic:opacity-100 transition-opacity">
                             ID: KS-2026
@@ -160,13 +160,16 @@
                 <!-- Tab Navigation -->
                 <div class="flex border-b border-zinc-700 overflow-x-auto">
                     <button onclick="switchTab('experience')" id="tab-experience" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer whitespace-nowrap">
-                        Experience_Log
+                        Experience
                     </button>
                     <button onclick="switchTab('education')" id="tab-education" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap">
-                        Education_Data
+                        Education
                     </button>
                     <button onclick="switchTab('publications')" id="tab-publications" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap">
-                        Publications_File
+                        Publications
+                    </button>
+                    <button onclick="switchTab('legaltech')" id="tab-legaltech" class="px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap">
+                        Legal-Tech Projects
                     </button>
                 </div>
 
@@ -183,10 +186,10 @@
                                 <h4 class="text-lg font-bold flex items-center gap-2 text-white">
                                     Dentons Link Legal <i data-lucide="cpu" class="w-4 h-4 text-lime-400"></i>
                                 </h4>
-                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Jun 2026 (Ongoing)</span>
+                                <span class="font-mono text-xs text-zinc-500 uppercase tracking-wider bg-zinc-950 px-2 py-1 border border-zinc-800">Jun 2026</span>
                             </div>
                             <p class="text-base font-medium mb-2 text-lime-400">Internship</p>
-                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Interning with the Technology Law team, focusing on data protection, cross-border compliance, and digital regulation.</p>
+                            <p class="text-zinc-400 text-sm leading-relaxed max-w-2xl">Researched data protection and digital regulation issues, drafted privacy compliance documentation, and analyzed DPDP-GDPR regulatory differences for technology-sector projects.</p>
                         </div>
 
                         <!-- Job 1 -->
@@ -298,7 +301,7 @@
                         </div>
                     </div>
 
-                    <!-- Publications Tab (New) -->
+                    <!-- Publications Tab -->
                     <div id="content-publications" class="tab-content fade-in">
                         <div class="space-y-8">
                             <!-- Pub 1 -->
@@ -335,6 +338,28 @@
                                             <span class="text-zinc-600 text-xs">///</span>
                                             <span class="text-zinc-400 text-xs uppercase tracking-widest">Published</span>
                                         </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Legal-Tech Projects Tab -->
+                    <div id="content-legaltech" class="tab-content fade-in">
+                        <div class="space-y-8">
+                            <!-- Project 1 -->
+                            <a href="https://github.com/kunalshekharjha/evidencevault-bsa" target="_blank" class="block border-l-4 border-orange-500 bg-zinc-950/50 p-6 group hover:bg-zinc-800 transition-all cursor-pointer no-underline">
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 text-orange-400">
+                                        <i data-lucide="terminal" class="w-6 h-6"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="text-lg font-bold text-white group-hover:text-orange-400 transition-colors leading-tight">
+                                            EvidenceVault BSA
+                                        </h3>
+                                        <p class="mt-3 text-sm text-zinc-400 leading-relaxed">
+                                            A proof-of-concept legal-tech tool for documenting, preserving, and preparing electronic evidence under the Bharatiya Sakshya Adhiniyam, 2023 through hash generation, metadata extraction, chain-of-custody tracking, and automated Section 63 documentation workflows.
+                                        </p>
                                     </div>
                                 </div>
                             </a>
@@ -467,15 +492,18 @@
             document.getElementById('content-experience').classList.remove('active');
             document.getElementById('content-education').classList.remove('active');
             document.getElementById('content-publications').classList.remove('active');
+            document.getElementById('content-legaltech').classList.remove('active');
             
             // Reset Button Styles
             const expBtn = document.getElementById('tab-experience');
             const eduBtn = document.getElementById('tab-education');
             const pubBtn = document.getElementById('tab-publications');
+            const techBtn = document.getElementById('tab-legaltech');
 
             expBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
             eduBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
             pubBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
+            techBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-transparent text-zinc-500 hover:text-white cursor-pointer whitespace-nowrap";
 
             // Activate Selected
             document.getElementById(`content-${tabName}`).classList.add('active');
@@ -484,8 +512,10 @@
                 expBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-lime-400 text-lime-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
             } else if (tabName === 'education') {
                 eduBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-cyan-400 text-cyan-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
-            } else {
+            } else if (tabName === 'publications') {
                 pubBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-fuchsia-400 text-fuchsia-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
+            } else if (tabName === 'legaltech') {
+                techBtn.className = "px-6 md:px-8 py-3 font-bold text-sm tracking-widest uppercase transition-all border-t-2 border-orange-400 text-orange-400 bg-zinc-900 cursor-pointer whitespace-nowrap";
             }
         }
     </script>
